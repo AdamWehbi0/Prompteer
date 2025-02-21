@@ -54,4 +54,21 @@ export async function fetchProtectedData() {
       throw new Error("Failed to fetch data");
     }
   }
+
+export async function signUp(first_name: string,last_name: string, email: string, password: string){
+
+  try{
+    const response = await api.post("/auth/signup",{
+      first_name,
+      last_name,
+      email,
+      password
+    });
+    return response.data
+  }catch(error: any){
+    throw new Error(error.response?.data?.detail || "Sign Up failed");
+  }
+
+
+}
   

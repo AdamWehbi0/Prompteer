@@ -1,11 +1,7 @@
-import Login from "./Login";
+import AppRoutes from "./routes/Routes";
+
 function App() {
-  return (
-    <div>
-      <h1>React + FastAPI JWT Authentication</h1>
-      <Login />
-    </div>
-  );
+  return <AppRoutes />;
 }
 
 export default App;

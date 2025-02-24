@@ -41,7 +41,11 @@ export async function fetchProtectedData() {
     }
   
     try {
-      const response = await api.get("/protected");
+      const response = await api.get("/protected",{
+        headers:{
+          Authorization: `Bearer ${token}`
+        }
+      });
   
       console.log("🔍 Full API Response:", response); // Log full response
       console.log("🔍 Response Data:", response.data); // Log only the data
@@ -68,7 +72,22 @@ export async function signUp(first_name: string,last_name: string, email: string
   }catch(error: any){
     throw new Error(error.response?.data?.detail || "Sign Up failed");
   }
-
-
 }
+
+export async function fetchOptimizedPrompt(prompt: string): Promise<string> {
+  try {
+    const response = await api.post("/chat", { prompt: String(prompt) });
+
+    if (!response.data.response) {
+      throw new Error("Invalid response from AI.");
+    }
+
+    return response.data.response; // ✅ Return the optimized prompt
+  } catch (error: any) {
+    console.error("API Error:", error);
+    return "Error: Unable to generate prompt.";
+  }
+}
+
+
   

@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Faculty+Glyphic:wght@100;300;400;600&display=swap');
+
+/* Apply background and font only to LandingPage */
+.landing-page {
+  background-color: #f2f1f5;
+  color: #000000;
+  min-height: 100vh;
+  width: 100vw; /* Ensures it covers the entire viewport width */
+  font-family: 'Faculty Glyphic', serif;
+  padding-top: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden; /* Prevents any horizontal scroll issues */
+}
+
+/* Ensure all child elements inherit styles only within LandingPage */
+.landing-page * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* Navbar styles */
+.navbar {
+  background-color: white;
+  padding: 3px 8px;
+  box-shadow: 0 3px 1px rgba(177, 173, 173, 0.1);
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 1000;
+}
+
+/* Navigation styles */
+.nav-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.nav-logo img {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+}
+
+.nav-logo h4{
+    margin-left: -15px;
+}
+
+.nav-items-container {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+}
+
+.nav-item {
+  font-size: 12px;
+  font-weight: bold;
+  color: #000000;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-item:hover {
+  color: #6a5acd;
+}
+
+/* LandingPage specific content */
+.landing-page .div1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+}
+
+.landing-page .button-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+}
+
+.landing-page .buttons {
+  background-color: #ffffff;
+  color: #6e6d70;
+  width: 125px;
+  margin: 10px;
+  border: 2px solid #b8b8b8;
+  padding: 8px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.landing-page .buttons:hover {
+  background-color: #b3b2b4;
+  border-color: #b3b2b4;
+  color: #000000;
+}
+
+/* Add this to your LandingPage.css file */
+
+@keyframes bobbing {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+  
+  .landing-page .buttons {
+    background-color: #ffffff;
+    color: #6e6d70;
+    width: 125px;
+    margin: 10px;
+    border: 2px solid #b8b8b8;
+    padding: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    animation: bobbing 2s ease-in-out infinite;
+  }
+  
+  /* Optional: Offset the animation timing between buttons for a more playful effect */
+  .landing-page .buttons:nth-child(2) {
+    animation-delay: 0.5s;
+  }
+  
+  .landing-page .buttons:hover {
+    background-color: #b3b2b4;
+    border-color: #b3b2b4;
+    color: #000000;
+  }
+
+  .landing-header-text{
+    margin-bottom: 40px;
+  }

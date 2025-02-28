@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "../styles/Login.css"; // Import the CSS file
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -34,11 +35,12 @@ const Login = () => {
   };
 
   return (
-    <div className="login-container">
-      <div className="login-box">
-        <h2>Login</h2>
-        <form onSubmit={handleLogin}>
+    <div className="login-wrapper">
+      <div className="login-container">
+        <h2 className="login-title">Login</h2>
+        <form className="login-form" onSubmit={handleLogin}>
           <input
+            className="login-input"
             type="email"
             placeholder="Email"
             value={email}
@@ -46,15 +48,19 @@ const Login = () => {
             required
           />
           <input
+            className="login-input"
             type="password"
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
           />
-          {error && <p className="error-text">{error}</p>}
-          <button type="submit">Login</button>
+          {error && <p className="login-error">{error}</p>}
+          <button className="login-button" type="submit">Login</button>
         </form>
+        <p className="signup-text">
+          Don't have an account? <span className="signup-link" onClick={() => navigate("/signup")}>Sign Up</span>
+        </p>
       </div>
     </div>
   );
